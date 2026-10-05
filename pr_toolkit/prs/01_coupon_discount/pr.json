@@ -1,0 +1,23 @@
+{
+  "id": "01",
+  "branch": "feature/coupon_discount",
+  "title": "Add coupon codes to checkout",
+  "commit_message": "Add coupon codes to checkout",
+  "labels": [
+    "feature",
+    "payments"
+  ],
+  "body": "## Summary\n\nCustomers can now pass a couponCode when they check out. SAVE10 gives 10 percent off and WELCOME5 gives 5.00 off.\n\n## Changes\n\n* New coupons module with SAVE10 and WELCOME5\n* Pricing applies the discount to the total\n* POST /api/orders accepts couponCode\n\n## How to test\n\nAdd an item to the cart, then POST /api/orders with {\"couponCode\": \"SAVE10\"} and check totals.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "high",
+    "verixa_should_cover": [
+      "Valid percent coupon reduces the total by 10 percent",
+      "Lowercase coupon code is accepted",
+      "Unknown coupon returns 400",
+      "Fixed coupon on a cart cheaper than 5.00 must not make the total negative (BUG: it does)",
+      "Checkout without a coupon still works"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}

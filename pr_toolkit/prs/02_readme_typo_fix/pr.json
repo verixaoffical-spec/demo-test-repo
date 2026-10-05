@@ -1,0 +1,19 @@
+{
+  "id": "02",
+  "branch": "docs/readme_typo_fix",
+  "title": "Fix typo in README",
+  "commit_message": "Fix README typo",
+  "labels": [
+    "documentation"
+  ],
+  "body": "## Summary\n\nFixes a spelling mistake and adds a short contributing note.\n\n## Changes\n\n* README spelling fix\n* README note about running tests\n\n## How to test\n\nRead the README.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "low",
+    "verixa_should_cover": [
+      "Documentation only change, no test cases needed",
+      "Verixa should label it low risk and skip Run Now"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}

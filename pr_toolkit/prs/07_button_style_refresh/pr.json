@@ -1,0 +1,21 @@
+{
+  "id": "07",
+  "branch": "style/button_style_refresh",
+  "title": "Refresh button colors and spacing",
+  "commit_message": "Refresh button style",
+  "labels": [
+    "ui",
+    "style"
+  ],
+  "body": "## Summary\n\nButtons are now green with larger padding and rounder corners.\n\n## Changes\n\n* styles.css button color, padding and radius\n\n## How to test\n\nOpen the demo page and look at the buttons.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "low",
+    "verixa_should_cover": [
+      "Visual only change",
+      "Existing Playwright flow should still pass",
+      "Verixa should label it low risk"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}

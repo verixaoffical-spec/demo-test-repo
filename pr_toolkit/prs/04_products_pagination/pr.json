@@ -1,0 +1,23 @@
+{
+  "id": "04",
+  "branch": "feature/products_pagination",
+  "title": "Paginate the products list",
+  "commit_message": "Paginate products list",
+  "labels": [
+    "feature",
+    "api"
+  ],
+  "body": "## Summary\n\nGET /api/products now supports page and limit query parameters and returns a paged object.\n\n## Changes\n\n* list returns items, page, limit and total\n* Default page size is 10\n\n## How to test\n\nCall GET /api/products?page=1&limit=2.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "medium",
+    "verixa_should_cover": [
+      "page and limit return the right slice",
+      "total reflects the filtered count",
+      "page 0 or negative page is handled",
+      "Response shape changed from array to object, so the demo page and Newman collection break (BUG: not updated)",
+      "Category filter still works with pagination"
+    ],
+    "existing_tests_pass_after_pr": false
+  }
+}

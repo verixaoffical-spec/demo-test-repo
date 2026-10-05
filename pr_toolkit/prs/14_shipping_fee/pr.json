@@ -1,0 +1,23 @@
+{
+  "id": "14",
+  "branch": "feature/shipping_fee",
+  "title": "Add flat shipping fee with free shipping threshold",
+  "commit_message": "Add shipping fee",
+  "labels": [
+    "feature",
+    "payments"
+  ],
+  "body": "## Summary\n\nOrders under 50.00 pay a flat 4.99 shipping fee. Orders above 50.00 ship free.\n\n## Changes\n\n* pricing adds a shipping amount to the total\n\n## How to test\n\nCheck out a cart under 50.00 and one over 50.00.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "high",
+    "verixa_should_cover": [
+      "Cart under the threshold pays 4.99 shipping",
+      "Cart of exactly 50.00 should ship free (BUG: it is charged)",
+      "Cart over the threshold ships free",
+      "Existing checkout test expects no shipping and now fails (BUG: test not updated)",
+      "Total equals subtotal plus shipping"
+    ],
+    "existing_tests_pass_after_pr": false
+  }
+}

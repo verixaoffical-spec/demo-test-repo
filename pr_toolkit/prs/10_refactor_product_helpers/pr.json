@@ -1,0 +1,20 @@
+{
+  "id": "10",
+  "branch": "refactor/product_helpers",
+  "title": "Refactor product service helpers",
+  "commit_message": "Refactor product helpers",
+  "labels": [
+    "refactor"
+  ],
+  "body": "## Summary\n\nExtracts a findById helper and renames a local variable. No behavior change intended.\n\n## Changes\n\n* findById helper\n* rename local variable in list\n\n## How to test\n\nRun the existing tests.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "low",
+    "verixa_should_cover": [
+      "No behavior change, regression run only",
+      "Verixa should label it low risk and suggest a small regression set",
+      "A good Analysis Agent output says tests exist and nothing new is needed"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}

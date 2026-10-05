@@ -1,0 +1,21 @@
+{
+  "id": "13",
+  "branch": "chore/dependency_bump",
+  "title": "Bump version and test tool dependencies",
+  "commit_message": "Bump dependencies",
+  "labels": [
+    "chore",
+    "dependencies"
+  ],
+  "body": "## Summary\n\nBumps the package version to 1.1.0 and updates Playwright and Newman patch ranges.\n\n## Changes\n\n* package.json version and devDependencies\n\n## How to test\n\nRun npm install and npm test.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "low",
+    "verixa_should_cover": [
+      "Only dev dependencies change, no runtime code touched",
+      "Smoke run of Playwright and Newman is enough",
+      "Verixa should label it low risk"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}

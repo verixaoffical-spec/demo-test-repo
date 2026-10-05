@@ -1,0 +1,23 @@
+{
+  "id": "11",
+  "branch": "feature/product_search",
+  "title": "Add product search by name",
+  "commit_message": "Add product search",
+  "labels": [
+    "feature",
+    "api"
+  ],
+  "body": "## Summary\n\nGET /api/products accepts q and returns products whose name matches.\n\n## Changes\n\n* list filters by q using a regular expression\n\n## How to test\n\nCall GET /api/products?q=Mouse.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "medium",
+    "verixa_should_cover": [
+      "q=Mouse returns the mouse",
+      "Search should be case insensitive (BUG: it is case sensitive)",
+      "q with regex characters such as ( must not crash the server (BUG: returns 500)",
+      "q combined with category works",
+      "Empty q returns all products"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}

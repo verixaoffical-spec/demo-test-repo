@@ -1,0 +1,23 @@
+{
+  "id": "09",
+  "branch": "feature/login_rate_limit",
+  "title": "Rate limit failed logins",
+  "commit_message": "Rate limit failed logins",
+  "labels": [
+    "security",
+    "auth"
+  ],
+  "body": "## Summary\n\nAfter 5 failed logins for an email, further attempts return 429 for 15 minutes.\n\n## Changes\n\n* New rate limiter in core\n* login checks and records failures\n\n## How to test\n\nFail login 5 times then try the correct password.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "medium",
+    "verixa_should_cover": [
+      "Fifth failure locks the account and returns 429",
+      "Correct password during lock is still refused",
+      "Counter should reset after a successful login (BUG: it never resets)",
+      "Lock is per email, so an attacker can lock out a real user",
+      "Unknown email is counted the same way"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}

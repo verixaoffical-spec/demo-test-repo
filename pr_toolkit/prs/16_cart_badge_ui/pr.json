@@ -1,0 +1,22 @@
+{
+  "id": "16",
+  "branch": "feature/cart_badge_ui",
+  "title": "Show cart item count in the header",
+  "commit_message": "Add cart badge",
+  "labels": [
+    "feature",
+    "ui"
+  ],
+  "body": "## Summary\n\nThe header now shows how many items were added to the cart.\n\n## Changes\n\n* Cart count in header\n* Count updates when adding an item\n\n## How to test\n\nLogin, add two items, look at the header.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "medium",
+    "verixa_should_cover": [
+      "Count increases after each Add to cart click",
+      "Count should go back to 0 after checkout (BUG: it stays)",
+      "Count should show existing cart items after login (BUG: starts at 0)",
+      "Guest click does not change the count"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}

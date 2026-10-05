@@ -1,0 +1,16 @@
+{
+  "name": "shoplite",
+  "version": "1.1.0",
+  "description": "Tiny shop demo used to test Verixa",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test tests/*.test.js",
+    "test:api": "newman run postman/shoplite.postman_collection.json --env-var baseUrl=http://localhost:3000",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "newman": "^6.2.1"
+  }
+}

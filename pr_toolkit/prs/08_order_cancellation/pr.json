@@ -1,0 +1,24 @@
+{
+  "id": "08",
+  "branch": "feature/order_cancellation",
+  "title": "Let customers cancel an order",
+  "commit_message": "Add order cancellation",
+  "labels": [
+    "feature",
+    "payments",
+    "orders"
+  ],
+  "body": "## Summary\n\nAdds POST /api/orders/:id/cancel which marks the order CANCELLED and records the refund amount.\n\n## Changes\n\n* orders.cancelOrder\n* cancel route\n\n## How to test\n\nPlace an order, then POST /api/orders/1/cancel.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "high",
+    "verixa_should_cover": [
+      "Owner can cancel a PLACED order and refundTotal equals the order total",
+      "A customer must not cancel another customer's order (BUG: no ownership check)",
+      "Cancelling twice must not refund twice (BUG: refund doubles)",
+      "Unknown order returns 404",
+      "Unauthenticated call returns 401"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}

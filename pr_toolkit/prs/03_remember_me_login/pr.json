@@ -1,0 +1,23 @@
+{
+  "id": "03",
+  "branch": "feature/remember_me_login",
+  "title": "Add remember me option to login",
+  "commit_message": "Add remember me option to login",
+  "labels": [
+    "feature",
+    "security"
+  ],
+  "body": "## Summary\n\nLogin accepts rememberMe. When true, the token lasts 30 days instead of 1 hour.\n\n## Changes\n\n* token.sign takes a remember option\n* login passes rememberMe to the token\n\n## How to test\n\nLogin with rememberMe true and false and compare the exp claim.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "high",
+    "verixa_should_cover": [
+      "Login without rememberMe gives a 1 hour token",
+      "Login with rememberMe gives a 30 day token",
+      "Expired normal token is rejected",
+      "Token with remember flag must still expire (BUG: it never expires)",
+      "Tampered token is rejected"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}

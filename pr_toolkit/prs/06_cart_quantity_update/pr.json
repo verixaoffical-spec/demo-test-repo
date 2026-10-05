@@ -1,0 +1,23 @@
+{
+  "id": "06",
+  "branch": "feature/cart_quantity_update",
+  "title": "Add endpoint to change cart quantity",
+  "commit_message": "Add cart quantity update",
+  "labels": [
+    "feature",
+    "cart"
+  ],
+  "body": "## Summary\n\nAdds PATCH /api/cart/items/:productId so the quantity of a cart line can be changed.\n\n## Changes\n\n* cart.updateItem\n* PATCH route in cart routes\n\n## How to test\n\nPATCH /api/cart/items/1 with {\"quantity\": 3}.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "medium",
+    "verixa_should_cover": [
+      "Valid quantity updates the line total",
+      "Unknown product in cart returns 404",
+      "Quantity 0, negative, decimal or text must be rejected (BUG: no validation)",
+      "Quantity above stock must be rejected (BUG: not checked)",
+      "Unauthenticated call returns 401"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}

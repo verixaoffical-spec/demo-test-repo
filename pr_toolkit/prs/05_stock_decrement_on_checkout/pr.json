@@ -1,0 +1,22 @@
+{
+  "id": "05",
+  "branch": "feature/stock_decrement_on_checkout",
+  "title": "Reduce stock when an order is placed",
+  "commit_message": "Decrement stock on checkout",
+  "labels": [
+    "feature",
+    "inventory"
+  ],
+  "body": "## Summary\n\nCheckout now subtracts the ordered quantity from product stock.\n\n## Changes\n\n* orders.checkout decrements product stock for each item\n\n## How to test\n\nCheck out 2 mice and confirm product 1 stock drops by 2.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "high",
+    "verixa_should_cover": [
+      "Stock drops by the ordered quantity",
+      "Two customers with carts that together exceed stock must not oversell (BUG: stock goes negative)",
+      "Failed checkout leaves stock unchanged",
+      "Cart add still blocks quantity above stock"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}

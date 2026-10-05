@@ -1,0 +1,23 @@
+{
+  "id": "15",
+  "branch": "fix/email_validation",
+  "title": "Validate and normalize email on registration",
+  "commit_message": "Validate and normalize email",
+  "labels": [
+    "bugfix",
+    "auth"
+  ],
+  "body": "## Summary\n\nRegistration now checks the email format and stores emails in lowercase.\n\n## Changes\n\n* Regex email check\n* trim and lowercase before saving\n\n## How to test\n\nRegister with Bob@Shop.com then log in.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "medium",
+    "verixa_should_cover": [
+      "Invalid formats such as a@b or spaces are rejected",
+      "Registering the same email in different case returns 409",
+      "Login with the original mixed case email must work (BUG: login does not normalize)",
+      "Whitespace around email is trimmed",
+      "Valid email still registers"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}

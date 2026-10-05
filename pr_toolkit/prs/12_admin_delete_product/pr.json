@@ -1,0 +1,24 @@
+{
+  "id": "12",
+  "branch": "feature/admin_delete_product",
+  "title": "Add admin endpoint to delete a product",
+  "commit_message": "Add admin product delete",
+  "labels": [
+    "feature",
+    "security",
+    "admin"
+  ],
+  "body": "## Summary\n\nAdds DELETE /api/products/:id so admins can remove products from the catalog.\n\n## Changes\n\n* products.remove\n* DELETE route\n\n## How to test\n\nLogin as admin and DELETE /api/products/6.\n",
+  "delete": [],
+  "demo_notes": {
+    "expected_risk": "high",
+    "verixa_should_cover": [
+      "Admin can delete a product",
+      "Customer must get 403 (BUG: any logged in user can delete)",
+      "Unknown id returns 404",
+      "Cart that already holds the deleted product must still load (BUG: cart returns 404)",
+      "Unauthenticated call returns 401"
+    ],
+    "existing_tests_pass_after_pr": true
+  }
+}
